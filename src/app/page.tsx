@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "@/components/particles";
-import { Navigation } from "@/app/components/nav"; // Import the Navigation component
+import { Navigation } from "@/components/nav"; // Import the Navigation component
 
 const navigation = [
   { name: "Projects", href: "/projects" },
