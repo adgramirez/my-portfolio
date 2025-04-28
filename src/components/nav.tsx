@@ -38,22 +38,24 @@ export const Navigation: React.FC = () => {
 
                     {/* Right Section */}
                     <div className="flex items-center gap-8 ml-auto">
+                         <Link
+                            href="/projects"
+                            className="duration-200 text-zinc-400 hover:text-zinc-100">
+                            About
+                        </Link>
                         <Link
                             href="/projects"
-                            className="duration-200 text-zinc-400 hover:text-zinc-100"
-                        >
+                            className="duration-200 text-zinc-400 hover:text-zinc-100">
                             Projects
                         </Link>
                         <Link
                             href="/contact"
-                            className="duration-200 text-zinc-400 hover:text-zinc-100"
-                        >
+                            className="duration-200 text-zinc-400 hover:text-zinc-100">
                             Contact
                         </Link>
                         <Link
                             href="/resume"
-                            className="px-4 py-2 text-white bg-blue-600 rounded-md shadow-md hover:bg-blue-700 duration-200"
-                        >
+                            className="px-4 py-2 text-white bg-blue-600 rounded-md shadow-md hover:bg-blue-700 duration-200">
                             Resume
                         </Link>
                     </div>
