@@ -33,7 +33,7 @@ export default function Home() {
       <Navigation />
 
       <section className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
-        <div className="mt-50 hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+        <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
         <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} />
 
         <h1 className="py-3.5 px-0.5 z-10 font-bold text-4xl sm:text-6xl md:text-9xl text-transparent bg-white bg-clip-text cursor-default text-edge-outline animate-title font-display whitespace-nowrap">
