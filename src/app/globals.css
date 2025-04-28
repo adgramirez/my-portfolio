@@ -25,6 +25,46 @@
   }
 }
 
+@keyframes fade-in{
+  0%{
+		opacity: 0;
+  }
+  70%{
+		opacity: 0;
+  }
+  100%{
+		opacity: 1;
+  }
+}
+
+@keyframes fade-left{
+  0%{
+    transform: translateX(0%);
+		opacity: 0%;
+  }
+  30%{
+    transform: translateX(0%);
+		opacity: 100%;
+  }
+  100%{
+		opacity: 0%;
+  }
+}
+
+@keyframes fade-right{
+  0%{
+    transform: translateX(0%);
+		opacity: 0%;
+  }
+  30%{
+    transform: translateX(0%);
+		opacity: 100%;
+  }
+  100%{
+		opacity: 0%;
+  }
+}
+
 @keyframes title {
   0% {
     line-height: 0%;
@@ -40,18 +80,27 @@
   }
   100% {
     line-height: 100%;
-    opacity: 1;
+    opacity: 100%;
   }
+}
+
+.animate-fade-in {
+  animation: fade-in 3.5s ease-in-out forwards;
 }
 
 .animate-title {
   animation: title 3s ease-out forwards;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 @font-face {
