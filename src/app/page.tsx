@@ -47,7 +47,7 @@ export default function Home() {
       <Navigation />
 
       <section className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
-        <div className="sm:my-16 text-center animate-fade-in">
+        <div className="text-center animate-fade-in">
           <h2 className="mt-4 text-sm sm:text-base md:text-lg text-zinc-500 animate-fade-in">
             Hi! I'm
           </h2>
@@ -62,7 +62,7 @@ export default function Home() {
 
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 mt-0 p-0" />
 
-        <div className="mb-16 sm:my-16 text-center animate-fade-in">
+        <div className="mb-16 text-center animate-fade-in">
           <h2 className="mt-4 text-sm sm:text-base md:text-lg text-zinc-500 animate-fade-in">
             A BS Computer Science Student at the Ateneo de Davao University
           </h2>

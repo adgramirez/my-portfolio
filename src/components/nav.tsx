@@ -1,5 +1,4 @@
 "use client";
-import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -28,27 +27,6 @@ export const Navigation: React.FC = () => {
         }`}
       >
         <div className="container flex items-center justify-between p-6 mx-auto">
-          {/* Hamburger Icon for Small Screens */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-zinc-400 hover:text-zinc-100"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-
           {/* Navigation Links (Desktop) */}
           <div className="hidden lg:flex items-center gap-8 ml-auto">
             <Link
@@ -76,13 +54,34 @@ export const Navigation: React.FC = () => {
               Resume
             </Link>
           </div>
+
+          {/* Hamburger Icon for Small Screens */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden text-zinc-400 hover:text-zinc-100 ml-auto"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
         </div>
       </div>
 
       {/* Sidebar for Mobile View */}
       <div
-        className={`fixed inset-y-0 left-0 z-50 w-64 bg-zinc-900 transform ${
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed top-2 h-auto right-0 z-50 w-64 bg-zinc-900 transform ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 lg:hidden`}
       >
         <div className="flex flex-col p-6 space-y-6">
