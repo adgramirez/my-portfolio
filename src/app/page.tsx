@@ -1,16 +1,16 @@
 "use client";
 
-import Link from "next/link";
+// import Link from "next/link";
 import React, { useEffect } from "react";
 import Particles from "@/components/particles";
 import { Navigation } from "@/components/nav";
 import ProjectCard from "@/components/projectcard";
 import Masonry from "react-masonry-css";
 
-const navigation = [
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
-];
+// const navigation = [
+//   { name: "Projects", href: "/projects" },
+//   { name: "Contact", href: "/contact" },
+// ];
 
 const projects = [
   { title: "Project 1", description: "Short description here." },
@@ -49,7 +49,7 @@ export default function Home() {
       <section className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
         <div className="text-center animate-fade-in">
           <h2 className="mt-4 text-sm sm:text-base md:text-lg text-zinc-500 animate-fade-in">
-            Hi! I'm
+            Hi! I am
           </h2>
         </div>
 
