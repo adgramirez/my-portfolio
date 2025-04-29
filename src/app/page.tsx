@@ -71,7 +71,7 @@ export default function Home() {
 
       <section className="w-full max-w-5xl mx-auto h-auto bg-zinc-800 text-white flex flex-col justify-center overflow-hidden px-4 sm:px-8 py-16 rounded-lg my-16 sm:my-50 snap-start">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12">
-          Project
+          Projects
         </h2>
 
         <Masonry
