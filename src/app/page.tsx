@@ -14,7 +14,7 @@ import About from "@/components/about";
 // ];
 
 const projects = [
-  { title: "UniVents", description: "Short description here." },
+  { title: "UniVents", description: "Short description here.", imageUrl: "./UniVents.png" },
   { title: "Tycheros Cafe and Bar", description: "Another cool project." },
   { title: "Project 3", description: "Yet another one." },
   { title: "Project 4", description: "And yet another one." },
@@ -89,6 +89,7 @@ export default function Home() {
               <ProjectCard
                 title={project.title}
                 description={project.description}
+                imageUrl={project.imageUrl} // Pass the image URL if available
               />
             </div>
           ))}
