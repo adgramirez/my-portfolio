@@ -6,6 +6,7 @@ import Particles from "@/components/particles";
 import { Navigation } from "@/components/nav";
 import ProjectCard from "@/components/projectcard";
 import Masonry from "react-masonry-css";
+import About from "@/components/about";
 
 // const navigation = [
 //   { name: "Projects", href: "/projects" },
@@ -13,8 +14,8 @@ import Masonry from "react-masonry-css";
 // ];
 
 const projects = [
-  { title: "Project 1", description: "Short description here." },
-  { title: "Project 2", description: "Another cool project." },
+  { title: "UniVents", description: "Short description here." },
+  { title: "Tycheros Cafe and Bar", description: "Another cool project." },
   { title: "Project 3", description: "Yet another one." },
   { title: "Project 4", description: "And yet another one." },
   { title: "Project 5", description: "And yet another one." },
@@ -43,7 +44,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen min-h-screen overflow-auto bg-gradient-to-tl from-black via-zinc-600/20 to-black snap-y snap-mandatory">
+    <div className="flex flex-col items-center justify-center w-screen min-h-screen overflow-x-hidden overflow-y-auto bg-gradient-to-tl from-black via-zinc-600/20 to-black snap-y snap-mandatory">
       <Navigation />
 
       <section className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
@@ -62,15 +63,19 @@ export default function Home() {
 
         <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 mt-0 p-0" />
 
-        <div className="mb-16 text-center animate-fade-in">
-          <h2 className="mt-4 text-sm sm:text-base md:text-lg text-zinc-500 animate-fade-in">
+        <div className="mb-16 text-center animate-fade-in overflow-hidden sm:overflow-visible">
+          <h2 className="mx-20 mt-4 text-sm sm:text-base md:text-lg text-zinc-500 animate-fade-in">
             A BS Computer Science Student at the Ateneo de Davao University
           </h2>
         </div>
       </section>
 
+      <section className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
+        <About />
+      </section>
+
       <section className="w-full max-w-5xl mx-auto h-auto bg-zinc-800 text-white flex flex-col justify-center overflow-hidden px-4 sm:px-8 py-16 rounded-lg my-16 sm:my-50 snap-start">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6">
           Projects
         </h2>
 
