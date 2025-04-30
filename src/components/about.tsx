@@ -24,7 +24,7 @@ export default function About() {
       >
         <h2 className="text-3xl font-bold mb-4">About Me</h2>
         <p className="text-zinc-300 leading-relaxed">
-          I'm a BS Computer Science student at Ateneo de Davao University, passionate about building full-stack apps and improving user experiences. I enjoy experimenting with creative frontend design and building clean, scalable code.
+          I am a BS Computer Science student at Ateneo de Davao University, passionate about building full-stack apps and improving user experiences. I enjoy experimenting with creative frontend design and building clean, scalable code.
         </p>
       </motion.div>
     </section>
