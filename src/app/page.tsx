@@ -7,6 +7,7 @@ import { Navigation } from "@/components/nav";
 import ProjectCard from "@/components/projectcard";
 import Masonry from "react-masonry-css";
 import About from "@/components/about";
+import { motion } from "framer-motion";
 
 // const navigation = [
 //   { name: "Projects", href: "/projects" },
@@ -14,12 +15,13 @@ import About from "@/components/about";
 // ];
 
 const projects = [
-  { title: "UniVents", description: "Short description here.", imageUrl: "./UniVents.png" },
-  { title: "Tycheros Cafe and Bar", description: "Another cool project." },
-  { title: "Project 3", description: "Yet another one." },
-  { title: "Project 4", description: "And yet another one." },
-  { title: "Project 5", description: "And yet another one." },
-  { title: "Project 6", description: "And yet another one." },
+  { title: "UniVents", description: "Short description here.", imageUrl: "./assets/UniVents.png" },
+  { title: "Tycheros Cafe and Bar", description: "Another cool project.", imageUrl: "./assets/Tycheros.png" },
+  { title: "Valorant", description: "Yet another one.", imageUrl: "./assets/Valorant.png" },
+  { title: "", description: "", imageUrl: "" },
+  { title: "", description: "", imageUrl: "" },
+  { title: "ITC", description: "Yet another one.", imageUrl: "./assets/ITC.png" },
+  
 ];
 
 const breakpointColumnsObj = {
@@ -65,7 +67,7 @@ export default function Home() {
 
         <div className="mb-16 text-center animate-fade-in overflow-hidden sm:overflow-visible">
           <h2 className="mx-20 mt-4 text-sm sm:text-base md:text-lg text-zinc-500 animate-fade-in">
-            A BS Computer Science Student at the Ateneo de Davao University
+            A 3rd Year Computer Science Student at Ateneo de Davao University
           </h2>
         </div>
       </section>
@@ -85,13 +87,24 @@ export default function Home() {
           columnClassName="bg-clip-padding"
         >
           {projects.map((project, index) => (
-            <div key={index} className="mt-6">
+            <motion.div
+              key={index}
+              className="mt-6"
+              initial={{ opacity: 0, y: -40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1,
+                delay: index * 0.15,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true }}
+            >
               <ProjectCard
                 title={project.title}
                 description={project.description}
-                imageUrl={project.imageUrl} // Pass the image URL if available
+                imageUrl={project.imageUrl}
               />
-            </div>
+            </motion.div>
           ))}
         </Masonry>
       </section>
