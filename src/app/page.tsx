@@ -49,7 +49,7 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center w-screen min-h-screen overflow-x-hidden overflow-y-auto bg-gradient-to-tl from-black via-zinc-600/20 to-black snap-y snap-mandatory">
       <Navigation />
 
-      <section className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
+      <section id = "home" className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
         <div className="text-center animate-fade-in">
           <h2 className="mt-4 text-sm sm:text-base md:text-lg text-zinc-500 animate-fade-in">
             Hi! I am
@@ -72,11 +72,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
+      <section id = "about" className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
         <About />
       </section>
 
-      <section className="w-full max-w-5xl mx-auto h-auto bg-zinc-800 text-white flex flex-col justify-center overflow-hidden px-4 sm:px-8 py-16 rounded-lg my-16 sm:my-50 snap-start">
+      <section id = "projects" className="w-full max-w-5xl mx-auto h-auto bg-zinc-800 text-white flex flex-col justify-center overflow-hidden px-4 sm:px-8 py-16 rounded-lg my-16 sm:my-10 snap-start">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6">
           Projects
         </h2>
