@@ -11,12 +11,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   imageUrl,
-  device = "laptop", // default
+  //device = "laptop", // default
 }) => {
-  const sizeClass =
-    device === "mobile"
-      ? "xl:max-w-xs md:max-w-sm" // narrower for phones
-      : "xl:max-w-lg md:max-w-md"; // wider for laptops
+  // const sizeClass =
+  //   device === "mobile"
+  //     ? "xl:max-w-xs md:max-w-sm" // narrower for phones
+  //     : "xl:max-w-lg md:max-w-md"; // wider for laptops
 
   return (
     <div

@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import Particles from "@/components/particles";
 import { Navigation } from "@/components/nav";
 import ProjectCard from "@/components/projectcard";
-import Masonry from "react-masonry-css";
+// import Masonry from "react-masonry-css";
 import About from "@/components/about";
 import { motion } from "framer-motion";
 
