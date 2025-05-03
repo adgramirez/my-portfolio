@@ -5,28 +5,24 @@ import React, { useEffect } from "react";
 import Particles from "@/components/particles";
 import { Navigation } from "@/components/nav";
 import ProjectCard from "@/components/projectcard";
-import Masonry from "react-masonry-css";
+// import Masonry from "react-masonry-css";
 import About from "@/components/about";
+import { motion } from "framer-motion";
 
 // const navigation = [
 //   { name: "Projects", href: "/projects" },
 //   { name: "Contact", href: "/contact" },
 // ];
 
-const projects = [
-  { title: "UniVents", description: "Short description here." },
-  { title: "Tycheros Cafe and Bar", description: "Another cool project." },
-  { title: "Project 3", description: "Yet another one." },
-  { title: "Project 4", description: "And yet another one." },
-  { title: "Project 5", description: "And yet another one." },
-  { title: "Project 6", description: "And yet another one." },
+const laptopProjects = [
+  { title: "ITC", description: "Yet another one.", imageUrl: "./assets/ITC.png" },
+  { title: "Valorant", description: "Yet another one.", imageUrl: "./assets/Valorant.png" },
 ];
 
-const breakpointColumnsObj = {
-  default: 3,
-  1100: 2,
-  700: 1,
-};
+const mobileProjects = [
+  { title: "UniVents", description: "Short description here.", imageUrl: "./assets/UniVents.png" },
+  { title: "Tycheros Cafe and Bar", description: "Another cool project.", imageUrl: "./assets/Tycheros.png" },
+];
 
 export default function Home() {
   useEffect(() => {
@@ -47,7 +43,7 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center w-screen min-h-screen overflow-x-hidden overflow-y-auto bg-gradient-to-tl from-black via-zinc-600/20 to-black snap-y snap-mandatory">
       <Navigation />
 
-      <section className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
+      <section id = "home" className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
         <div className="text-center animate-fade-in">
           <h2 className="mt-4 text-sm sm:text-base md:text-lg text-zinc-500 animate-fade-in">
             Hi! I am
@@ -65,34 +61,59 @@ export default function Home() {
 
         <div className="mb-16 text-center animate-fade-in overflow-hidden sm:overflow-visible">
           <h2 className="mx-20 mt-4 text-sm sm:text-base md:text-lg text-zinc-500 animate-fade-in">
-            A BS Computer Science Student at the Ateneo de Davao University
+            A 3rd Year Computer Science Student at Ateneo de Davao University
           </h2>
         </div>
       </section>
 
-      <section className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
+      <section id = "about" className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
+      <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} />
         <About />
       </section>
 
-      <section className="w-full max-w-5xl mx-auto h-auto bg-zinc-800 text-white flex flex-col justify-center overflow-hidden px-4 sm:px-8 py-16 rounded-lg my-16 sm:my-50 snap-start">
+      <section id = "projects" className="w-full max-w-5xl mx-auto h-auto bg-zinc-800 text-white flex flex-col justify-center overflow-hidden px-4 sm:px-8 py-16 rounded-lg my-16 sm:my-10 snap-start">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6">
           Projects
         </h2>
+        <div className="grid grid-cols-1 md:grid-cols-[4fr_1fr] gap-8 w-full">
+          {/* Left column: laptop projects */}
+          <div className="flex flex-col gap-6">
+            {laptopProjects.map((project, index) => (
+              <motion.div
+                key={`laptop-${index}`}
+                initial={{ opacity: 0, y: -40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1,
+                  delay: index * 0.2,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
+              >
+                <ProjectCard {...project} device="laptop" />
+              </motion.div>
+            ))}
+          </div>
 
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="flex w-auto gap-6"
-          columnClassName="bg-clip-padding"
-        >
-          {projects.map((project, index) => (
-            <div key={index} className="mt-6">
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-              />
-            </div>
-          ))}
-        </Masonry>
+          {/* Right column: mobile projects */}
+          <div className="flex flex-col items-center gap-12">
+            {mobileProjects.map((project, index) => (
+              <motion.div
+                key={`mobile-${index}`}
+                initial={{ opacity: 0, y: -40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1,
+                  delay: index * 0.2,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
+              >
+                <ProjectCard {...project} device="mobile" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );
