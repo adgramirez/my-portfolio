@@ -96,21 +96,21 @@ export const Navigation: React.FC = () => {
             </svg>
           </button>
           <Link
-            href="/about"
+            href="#about"
             className="duration-200 text-zinc-400 hover:text-zinc-100"
             onClick={() => setIsMenuOpen(false)}
           >
             About
           </Link>
           <Link
-            href="/projects"
+            href="#projects"
             className="duration-200 text-zinc-400 hover:text-zinc-100"
             onClick={() => setIsMenuOpen(false)}
           >
             Projects
           </Link>
           <Link
-            href="/contact"
+            href="#contact"
             className="duration-200 text-zinc-400 hover:text-zinc-100"
             onClick={() => setIsMenuOpen(false)}
           >

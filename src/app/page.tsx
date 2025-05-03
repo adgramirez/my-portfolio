@@ -14,21 +14,15 @@ import { motion } from "framer-motion";
 //   { name: "Contact", href: "/contact" },
 // ];
 
-const projects = [
-  { title: "UniVents", description: "Short description here.", imageUrl: "./assets/UniVents.png" },
-  { title: "Tycheros Cafe and Bar", description: "Another cool project.", imageUrl: "./assets/Tycheros.png" },
-  { title: "Valorant", description: "Yet another one.", imageUrl: "./assets/Valorant.png" },
-  { title: "", description: "", imageUrl: "" },
-  { title: "", description: "", imageUrl: "" },
+const laptopProjects = [
   { title: "ITC", description: "Yet another one.", imageUrl: "./assets/ITC.png" },
-  
+  { title: "Valorant", description: "Yet another one.", imageUrl: "./assets/Valorant.png" },
 ];
 
-const breakpointColumnsObj = {
-  default: 3,
-  1100: 2,
-  700: 1,
-};
+const mobileProjects = [
+  { title: "UniVents", description: "Short description here.", imageUrl: "./assets/UniVents.png" },
+  { title: "Tycheros Cafe and Bar", description: "Another cool project.", imageUrl: "./assets/Tycheros.png" },
+];
 
 export default function Home() {
   useEffect(() => {
@@ -73,6 +67,7 @@ export default function Home() {
       </section>
 
       <section id = "about" className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
+      <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} />
         <About />
       </section>
 
@@ -80,33 +75,45 @@ export default function Home() {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6">
           Projects
         </h2>
+        <div className="grid grid-cols-1 md:grid-cols-[4fr_1fr] gap-8 w-full">
+          {/* Left column: laptop projects */}
+          <div className="flex flex-col gap-6">
+            {laptopProjects.map((project, index) => (
+              <motion.div
+                key={`laptop-${index}`}
+                initial={{ opacity: 0, y: -40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1,
+                  delay: index * 0.2,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
+              >
+                <ProjectCard {...project} device="laptop" />
+              </motion.div>
+            ))}
+          </div>
 
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="flex w-auto gap-6"
-          columnClassName="bg-clip-padding"
-        >
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="mt-6"
-              initial={{ opacity: 0, y: -40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 1,
-                delay: index * 0.15,
-                ease: "easeOut",
-              }}
-              viewport={{ once: true }}
-            >
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-                imageUrl={project.imageUrl}
-              />
-            </motion.div>
-          ))}
-        </Masonry>
+          {/* Right column: mobile projects */}
+          <div className="flex flex-col items-center gap-12">
+            {mobileProjects.map((project, index) => (
+              <motion.div
+                key={`mobile-${index}`}
+                initial={{ opacity: 0, y: -40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1,
+                  delay: index * 0.2,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
+              >
+                <ProjectCard {...project} device="mobile" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );
