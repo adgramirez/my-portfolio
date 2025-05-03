@@ -71,49 +71,52 @@ export default function Home() {
         <About />
       </section>
 
-      <section id = "projects" className="w-full max-w-5xl mx-auto h-auto bg-zinc-800 text-white flex flex-col justify-center overflow-hidden px-4 sm:px-8 py-16 rounded-lg my-16 sm:my-10 snap-start">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6">
-          Projects
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-[4fr_1fr] gap-8 w-full">
-          {/* Left column: laptop projects */}
-          <div className="flex flex-col gap-6">
-            {laptopProjects.map((project, index) => (
-              <motion.div
-                key={`laptop-${index}`}
-                initial={{ opacity: 0, y: -40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: index * 0.2,
-                  ease: "easeOut",
-                }}
-                viewport={{ once: true }}
-              >
-                <ProjectCard {...project} device="laptop" />
-              </motion.div>
-            ))}
-          </div>
+      <section id = "about" className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
+        <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} />
+        <section id = "projects" className="w-full max-w-5xl mx-auto h-auto text-white flex flex-col justify-center overflow-hidden px-4 sm:px-8 py-16 rounded-lg my-16 sm:my-10 snap-start">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6">
+            Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-[4fr_1fr] gap-8 w-full">
+            {/* Left column: laptop projects */}
+            <div className="flex flex-col gap-6">
+              {laptopProjects.map((project, index) => (
+                <motion.div
+                  key={`laptop-${index}`}
+                  initial={{ opacity: 0, y: -40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 1,
+                    delay: index * 0.2,
+                    ease: "easeOut",
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <ProjectCard {...project} device="laptop" />
+                </motion.div>
+              ))}
+            </div>
 
-          {/* Right column: mobile projects */}
-          <div className="flex flex-col items-center gap-12">
-            {mobileProjects.map((project, index) => (
-              <motion.div
-                key={`mobile-${index}`}
-                initial={{ opacity: 0, y: -40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: index * 0.2,
-                  ease: "easeOut",
-                }}
-                viewport={{ once: true }}
-              >
-                <ProjectCard {...project} device="mobile" />
-              </motion.div>
-            ))}
+            {/* Right column: mobile projects */}
+            <div className="flex flex-col items-center gap-12">
+              {mobileProjects.map((project, index) => (
+                <motion.div
+                  key={`mobile-${index}`}
+                  initial={{ opacity: 0, y: -40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 1,
+                    delay: index * 0.2,
+                    ease: "easeOut",
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <ProjectCard {...project} device="mobile" />
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
       </section>
     </div>
   );
