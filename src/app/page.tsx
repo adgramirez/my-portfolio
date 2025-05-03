@@ -15,13 +15,40 @@ import { motion } from "framer-motion";
 // ];
 
 const laptopProjects = [
-  { title: "ITC", description: "Yet another one.", imageUrl: "./assets/ITC.png" },
-  { title: "Valorant", description: "Yet another one.", imageUrl: "./assets/Valorant.png" },
+  { 
+    title: "ITC", 
+    description: "Yet another one.", 
+    imageUrls: [
+      "./assets/ITC.png"
+    ] 
+  },
+  { 
+    title: "Valorant", 
+    description: "Yet another one.", 
+    imageUrls: [
+      "./assets/Valorant.png"
+    ] 
+  },
 ];
 
 const mobileProjects = [
-  { title: "UniVents", description: "Short description here.", imageUrl: "./assets/UniVents.png" },
-  { title: "Tycheros Cafe and Bar", description: "Another cool project.", imageUrl: "./assets/Tycheros.png" },
+  {
+    title: "UniVents",
+    description: "Short description here.",
+    imageUrls: [
+      "./assets/UniVents.png",
+      "./assets/UniVents2.png",
+      "./assets/UniVents3.png",
+    ],
+  },
+  {
+    title: "Tycheros Cafe and Bar",
+    description: "Another cool project.",
+    imageUrls: [
+      "./assets/Tycheros.png",
+      //"./assets/Tycheros2.png",
+    ],
+  },
 ];
 
 export default function Home() {
