@@ -74,7 +74,7 @@ export default function Home() {
       <section id = "about" className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
         <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} />
         <section id = "projects" className="w-full max-w-5xl mx-auto h-auto text-white flex flex-col justify-center overflow-hidden px-4 sm:px-8 py-16 rounded-lg my-16 sm:my-10 snap-start">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center my-6">
             Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-[4fr_1fr] gap-8 w-full">
