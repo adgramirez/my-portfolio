@@ -6,7 +6,7 @@ import {
   useTransform,
   useSpring,
   // useMotionValue,
-  useMotionTemplate,
+  // useMotionTemplate,
 } from "framer-motion";
 import { useRef } from "react";
 
@@ -36,8 +36,8 @@ export default function About() {
     mouseY.set(clientY - top);
   }
 
-  const maskImage = useMotionTemplate`radial-gradient(240px at ${mouseX}px ${mouseY}px, white, transparent)`;
-  const style = { maskImage, WebkitMaskImage: maskImage };
+  // const maskImage = useMotionTemplate`radial-gradient(240px at ${mouseX}px ${mouseY}px, white, transparent)`;
+  // const style = { maskImage, WebkitMaskImage: maskImage };
 
   return (
     <section
@@ -85,7 +85,7 @@ export default function About() {
               <span className="text-purple-400 font-medium drop-shadow-glow">
                 backend logic
               </span>
-              , I've recently been exploring the creative side of tech—building
+              , I&apos;ve recently been exploring the creative side of tech—building
               interfaces, designing user flows, and diving into{" "}
               <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent animate-text-glow font-semibold">
                 mobile development
