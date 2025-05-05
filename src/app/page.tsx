@@ -15,13 +15,39 @@ import { motion } from "framer-motion";
 // ];
 
 const laptopProjects = [
-  { title: "ITC", description: "Yet another one.", imageUrl: "./assets/ITC.png" },
-  { title: "Valorant", description: "Yet another one.", imageUrl: "./assets/Valorant.png" },
+  {
+    title: "ITC",
+    description: "A computing toolkit packed into a simple website! From unit converters and tax calculators to factorials, loops, and a basic payroll system that showcases core programming concepts and arithmetics in action. Built for learning, but surprisingly handy!",
+    imageUrls: ["./assets/ITC.png"],
+    tags: ["HTML", "CSS", "JavaScript"],
+    pageUrl: "https://adgramirez.github.io/ITCWebsite/",
+    gitHubUrl: "https://github.com/adgramirez/ITCWebsite",
+  },
+  {
+    title: "Valorant",
+    description: "A stylish front-end web experience that lets you explore Valorant agents and their unique abilities. From slick hover effects to organized agent cards, the site brings Riot’s roster to life in a clean, interactive way. Whether you're a new recruit or a seasoned duelist, this UI makes learning agent kits feel fresh and fun.",
+    imageUrls: ["./assets/Valorant.png"],
+    tags: ["HTML", "CSS", "JavaScript"],
+    pageUrl: "https://adgramirez.github.io/ADET-PerformanceAssessment1-Valorant/",
+    gitHubUrl: "https://github.com/adgramirez/ADET-PerformanceAssessment1-Valorant",
+  },
 ];
 
 const mobileProjects = [
-  { title: "UniVents", description: "Short description here.", imageUrl: "./assets/UniVents.png" },
-  { title: "Tycheros Cafe and Bar", description: "Another cool project.", imageUrl: "./assets/Tycheros.png" },
+  {
+    title: "UniVents",
+    description: "Say goodbye to missing university events! This mobile app keeps students in the loop with campus happenings.",
+    imageUrls: ["./assets/UniVents.png", "./assets/UniVents2.png", "./assets/UniVents3.png"],
+    tags: ["Flutter", "Supabase"],
+    gitHubUrl:"https://github.com/johnlampa/univents_mobile"
+  },
+  {
+    title: "Tycheros Cafe",
+    description: "A mobile-friendly web app brewed to streamline orders and inventory management at a cafe.",
+    imageUrls: ["./assets/Tycheros.png"],
+    tags: ["Next.js", "Tailwind", "Node.js"],
+    gitHubUrl: "https://github.com/johnlampa/TycherosCafe-ManagementSystem",
+  },
 ];
 
 export default function Home() {
@@ -117,6 +143,105 @@ export default function Home() {
             </div>
           </div>
         </section>
+      </section>
+
+      <section id="techstack" className="relative flex flex-col items-center justify-center w-screen min-h-screen snap-start">
+        <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} />
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8">
+          Tech Stack
+        </h2>
+
+        <div className="w-full max-w-6xl px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-zinc-300 text-lg">
+  {/* Languages */}
+  <div className="text-center sm:text-left">
+    <h3 className="text-2xl font-semibold text-white mb-4">Languages</h3>
+    <ul className="space-y-2">
+      {[
+        ["Java", "java.svg"],
+        ["JavaScript", "javascript.svg"],
+        ["TypeScript", "typescript.svg"],
+        ["Python", "python.svg"],
+        ["Dart", "dart.svg"],
+      ].map(([name, icon]) => (
+        <li
+          key={name}
+          className="flex items-center gap-3 justify-center sm:justify-start bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-900 p-4 rounded-xl shadow-md hover:scale-105 transition-transform"
+        >
+          <img src={`./assets/icons/${icon}`} alt={name} className="w-6 h-6" />
+          <span>{name}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* Frontend */}
+  <div className="text-center sm:text-left">
+    <h3 className="text-2xl font-semibold text-white mb-4">Frontend</h3>
+    <ul className="space-y-2">
+      {[
+        ["HTML", "html.svg"],
+        ["CSS", "css.svg"],
+        ["Tailwind CSS", "tailwindcss.svg"],
+        ["React", "react.svg"],
+        ["Next.js", "next.svg"],
+        ["Flutter", "flutter.svg"],
+      ].map(([name, icon]) => (
+        <li
+          key={name}
+          className="flex items-center gap-3 justify-center sm:justify-start bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-900 p-4 rounded-xl shadow-md hover:scale-105 transition-transform"
+        >
+          <img src={`./assets/icons/${icon}`} alt={name} className="w-6 h-6" />
+          <span>{name}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* Backend */}
+  <div className="text-center sm:text-left">
+    <h3 className="text-2xl font-semibold text-white mb-4">Backend</h3>
+    <ul className="space-y-2">
+      {[
+        ["Node.js", "node.svg"],
+        ["Express.js", "express.svg"],
+        ["MySQL", "mysql.svg"],
+        ["PostgreSQL", "postgresql.svg"],
+        ["Supabase", "supabase.svg"],
+      ].map(([name, icon]) => (
+        <li
+          key={name}
+          className="flex items-center gap-3 justify-center sm:justify-start bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-900 p-4 rounded-xl shadow-md hover:scale-105 transition-transform"
+        >
+          <img src={`./assets/icons/${icon}`} alt={name} className="w-6 h-6" />
+          <span>{name}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* Tools */}
+  <div className="text-center sm:text-left">
+    <h3 className="text-2xl font-semibold text-white mb-4">Tools</h3>
+    <ul className="space-y-2">
+      {[
+        ["Git", "git.svg"],
+        ["GitHub", "github.svg"],
+        ["Postman", "postman.svg"],
+        ["VS Code", "vsc.svg"],
+        ["Apache NetBeans", "apache.svg"],
+      ].map(([name, icon]) => (
+        <li
+          key={name}
+          className="flex items-center gap-3 justify-center sm:justify-start bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-900 p-4 rounded-xl shadow-md hover:scale-105 transition-transform"
+        >
+          <img src={`./assets/icons/${icon}`} alt={name} className="w-6 h-6" />
+          <span>{name}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
       </section>
     </div>
   );

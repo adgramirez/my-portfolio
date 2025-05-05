@@ -28,22 +28,33 @@ export const Navigation: React.FC = () => {
       >
         <div className="container flex items-center justify-between p-6 mx-auto">
           {/* Navigation Links (Desktop) */}
-          <div className="hidden lg:flex items-center gap-8 ml-auto">
-            <a href="#about" className="duration-200 text-zinc-400 hover:text-zinc-100">
-              About
-            </a>
-            <a href="#projects" className="duration-200 text-zinc-400 hover:text-zinc-100">
-              Projects
-            </a>
-            <a href="#contact" className="duration-200 text-zinc-400 hover:text-zinc-100">
-              Contact
-            </a>
-            <Link
-              href="/resume"
-              className="px-4 py-2 text-white bg-blue-600 rounded-md shadow-md hover:bg-blue-700 duration-200"
+          <div className="hidden lg:flex items-center justify-between w-full">
+            {/* AARON Title Link */}
+            <a
+              href="#home"
+              className="text-white text-2xl font-display tracking-wide font-bold hover:text-zinc-300 transition duration-200"
             >
-              Resume
-            </Link>
+              AARON DANIEL RAMIREZ
+            </a>
+
+            {/* Other Navigation Links */}
+            <div className="flex items-center gap-8">
+              <a href="#about" className="duration-200 text-zinc-400 hover:text-zinc-100">
+                About
+              </a>
+              <a href="#projects" className="duration-200 text-zinc-400 hover:text-zinc-100">
+                Projects
+              </a>
+              <a href="#contact" className="duration-200 text-zinc-400 hover:text-zinc-100">
+                Contact
+              </a>
+              <Link
+                href="/resume"
+                className="px-4 py-2 text-white bg-blue-600 rounded-md shadow-md hover:bg-blue-700 duration-200"
+              >
+                Resume
+              </Link>
+            </div>
           </div>
 
           {/* Hamburger Icon for Small Screens */}
